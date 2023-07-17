@@ -16,12 +16,21 @@ Inference from model Results:
 2. Validation loss <1 but the r-squared value is mostly negative or nan. This indicate
    Possible Explanations:
 
-	Overfitting: The model might be overfitting the training data, which means it is learning the noise and 	specific patterns in the training data instead of generalizing to new data. This can lead to a low 	validation loss but poor performance on new data (negative R-squared). Overfitting can occur when the 	model is too complex or when there is not enough data for training.
+	Overfitting: The model might be overfitting the training data, which means it is learning the noise and
+	specific patterns in the training data instead of generalizing to new data. This can lead to a low 	
+	validation loss but poor performance on new data (negative R-squared). Overfitting can occur when the 	
+	model is too complex or when there is not enough data for training.
 
-	Underfitting: On the other hand, if the model is underfitting, it may not capture the underlying patterns 	in the data, resulting in poor performance both on training and validation data (negative R-squared). In 	this case, the model might not be complex enough to represent the relationships in the data adequately.
+	Underfitting: On the other hand, if the model is underfitting, it may not capture the underlying patterns 	
+	in the data, resulting in poor performance both on training and validation data (negative R-squared). In 	
+	this case, the model might not be complex enough to represent the relationships in the data adequately.
 
-	Data Quality: Issues with the data quality, such as outliers or missing values, can lead to poor model 	performance and negative R-squared values. It's essential to check the data for anomalies that might 	affect the model's ability to learn meaningful patterns.
+	Data Quality: Issues with the data quality, such as outliers or missing values, can lead to poor model 	
+	performance and negative R-squared values. It's essential to check the data for anomalies that might 	
+	affect the model's ability to learn meaningful patterns.
 
-	Inappropriate Model Choice: The chosen model architecture might not be suitable for the specific problem, 	leading to suboptimal performance. Different types of models might be more appropriate for different types 	of data and problems.
+	Inappropriate Model Choice: The chosen model architecture might not be suitable for the specific problem, 	
+	leading to suboptimal performance. Different types of models might be more appropriate for different types 	
+	of data and problems.
     Now, we know that data is from a trusted source, therefore the model either requires changing of parameters
     or as eearlier expexted the model is a wrong choice.
