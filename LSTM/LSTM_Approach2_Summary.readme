@@ -1,4 +1,5 @@
-This approach we simply try to predict the progression of a Patient based on the learning of an LSTM model. The model would be trained on clusters of data, but the cornerstone of this approach is that we only consider historic data and the learning of the model would not consider patient-pecific parameters. 
+This approach we simply try to predict the progression of a Patient based on the learning of an LSTM model. The model would be trained on clusters of data, but the 
+cornerstone of this approach is that we only consider historic data and the learning of the model would not consider patient-pecific parameters. 
 This would help us understand if there is a common progression trend of the Parkinson's disease. 
 
 Data Pre-Processing 
