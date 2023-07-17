@@ -1,0 +1,23 @@
+<h2>Approach for Predicting Parkinson's Disease Progression</h2>
+<p>In this approach, we simply try to predict the progression of a patient based on the learning of an LSTM model. The model would be trained on clusters of data, but the cornerstone of this approach is that we only consider historic data, and the learning of the model would not consider patient-specific parameters. This would help us understand if there is a common progression trend of Parkinson's disease.</p>
+
+<h3>Data Pre-Processing</h3>
+<p>There were a few missing values for UPDRS 1, 2, and 3, which were substituted in place with the mean values, while for UPDRS4, I substituted "0" primarily for two reasons:</p>
+<ol>
+  <li>A lot of missing values.</li>
+  <li>UPDRS4 is sometimes considered irrelevant and hence not examined for early stages of Parkinson's Disease; this might also be the reason for the missing value of UPDRS4 at most of the early stages.</li>
+</ol>
+<p>Now there were cases where UPDRS4 was already equal to 0. Here I ignored the fact that NA might be inferred as an early stage of PD, while UPDRS4 with value 0 may represent a relatively severe condition.</p>
+
+<h3>Inference from Model Results</h3>
+<ol>
+  <li>The graphs plotted between Average UPDRS scores and visit months indicate that there is no definitive trend of an increase in the average UPDRS scores. The trend of an increase in individual UPDRS scores has been analyzed in Approach 1 of LSTM. This might indicate a bad choice of the model for the prediction task at hand.</li>
+  <li>Validation loss &lt; 1, but the R-squared value is mostly negative or NaN. This indicates possible explanations:</li>
+</ol>
+<ul>
+  <li><strong>Overfitting:</strong> The model might be overfitting the training data, which means it is learning the noise and specific patterns in the training data instead of generalizing to new data. This can lead to a low validation loss but poor performance on new data (negative R-squared). Overfitting can occur when the model is too complex or when there is not enough data for training.</li>
+  <li><strong>Underfitting:</strong> On the other hand, if the model is underfitting, it may not capture the underlying patterns in the data, resulting in poor performance both on training and validation data (negative R-squared). In this case, the model might not be complex enough to represent the relationships in the data adequately.</li>
+  <li><strong>Data Quality:</strong> Issues with the data quality, such as outliers or missing values, can lead to poor model performance and negative R-squared values. It's essential to check the data for anomalies that might affect the model's ability to learn meaningful patterns.</li>
+  <li><strong>Inappropriate Model Choice:</strong> The chosen model architecture might not be suitable for the specific problem, leading to suboptimal performance. Different types of models might be more appropriate for different types of data and problems.</li>
+</ul>
+<p>Now, we know that the data is from a trusted source; therefore, the model either requires changing of parameters or, as expected earlier, the model is a wrong choice.</p>
